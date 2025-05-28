@@ -37,6 +37,10 @@ def main():
     print("\nSemesterverteilung (Promovierende):")
     print(controller.get_semester_promovierende())
 
+    print("Gesamtübersicht:")
+    for key, value in controller.get_gesamtuebersicht().items():
+        print(f"{key}: {value}")
+
 
 if __name__ == "__main__":
     main()
