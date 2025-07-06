@@ -9,8 +9,10 @@ import os
 # Pfad zur CSV-Datei mit den Teilnehmendendaten
 #DATA_PATH = "data/Teilnehmendenexport_Deutsch_für_den_Beruf_Fit_für_den_Berufsalltag_B2C1.csv"
 
-# Pfad zum Ordner mit den Teilnehmerlisten
-DATA_FOLDER = "data/teilnehmerliste_export"
+
+# Absoluter Pfad zum Ordner mit den Teilnehmerlisten
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # .../app
+DATA_FOLDER = os.path.join(BASE_DIR, "..", "data", "teilnehmerliste_export")
 
 # Alle CSV-Dateien im Ordner laden
 DATA_PATHS = [
@@ -30,6 +32,7 @@ COLUMN_NACHNAME = "Nachname"
 COLUMN_EMAIL = "E-Mail"
 COLUMN_TITEL = "Titel nachgestellt"
 COLUMN_MATRIKELNUMMER = "Matrikelnummer"
+COLUMN_BENUTZERNAME = "Benutzername"
 
 # Studiengangsinformationen (roh & bereinigt)
 COLUMN_STUDIENGANG = "Studiengänge"            # Original aus CSV (evtl. mehrere pro Person)
